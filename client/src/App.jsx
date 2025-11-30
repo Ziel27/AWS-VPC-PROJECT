@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-
 function App() {
   const [vpcs, setVpcs] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -18,7 +16,7 @@ function App() {
   const fetchVPCs = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`${API_URL}/vpcs`);
+      const response = await axios.get("/api/vpcs");
       setVpcs(response.data);
     } catch (error) {
       console.error('Error fetching VPCs:', error);
@@ -46,7 +44,7 @@ function App() {
     e.preventDefault();
     try {
       setLoading(true);
-      await axios.post(`${API_URL}/vpcs`, formData);
+      await axios.post("/api/vpcs" , formData);
       setFormData({ name: '', cidrBlock: '', region: '', description: '' });
       fetchVPCs(); // Refresh the list
       alert('VPC created successfully!');
@@ -65,7 +63,7 @@ function App() {
     }
     try {
       setLoading(true);
-      await axios.delete(`${API_URL}/vpcs/${id}`);
+      await axios.delete(`/api/vpcs/${id}`);
       fetchVPCs(); // Refresh the list
       alert('VPC deleted successfully!');
     } catch (error) {
