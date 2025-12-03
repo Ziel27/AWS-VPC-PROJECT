@@ -2,6 +2,9 @@
 
 A full-stack MERN (MongoDB Atlas, Express, React, Node.js) application designed for **AWS VPC (Virtual Private Cloud) training**. This project demonstrates real-world AWS networking concepts including public/private subnets, NAT gateways, bastion hosts, reverse-proxy frontends, and internet gateways.
 
+DIAGRAM
+![DIAGRAM](VPC-DIAGRAM.JPG)
+
 ## 🎯 Project Purpose
 
 This project is specifically designed for **AWS VPC training** to help understand:
